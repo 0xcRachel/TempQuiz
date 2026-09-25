@@ -1,0 +1,37 @@
+[
+  {
+    "id": 1,
+    "question": "Thủ đô của Việt Nam là thành phố nào?",
+    "options": ["Hà Nội", "TP. Hồ Chí Minh", "Đà Nẵng", "Hải Phòng"],
+    "answer": "Hà Nội",
+    "explanation": "Hà Nội là thủ đô của nước Cộng hòa Xã hội Chủ nghĩa Việt Nam."
+  },
+  {
+    "id": 2,
+    "question": "Ngôn ngữ lập trình nào được sử dụng phổ biến nhất để xây dựng giao diện web động?",
+    "options": ["JavaScript", "C++", "Pascal", "Assembly"],
+    "answer": "JavaScript",
+    "explanation": "JavaScript là ngôn ngữ tiêu chuẩn chạy trên trình duyệt web."
+  },
+  {
+    "id": 3,
+    "question": "Trong React, hook nào dùng để quản lý state nội bộ của component?",
+    "options": ["useState", "useEffect", "useMemo", "useRef"],
+    "answer": "useState",
+    "explanation": "useState là hook cơ bản cho phép khai báo và cập nhật state trong function component."
+  },
+  {
+    "id": 4,
+    "question": "Thư viện GSAP thường được dùng cho mục đích gì?",
+    "options": ["Hiệu ứng chuyển động (Animation)", "Xử lý cơ sở dữ liệu", "Quản lý HTTP Request", "Bảo mật mã nguồn"],
+    "answer": "Hiệu ứng chuyển động (Animation)",
+    "explanation": "GreenSock Animation Platform (GSAP) là thư viện tiêu chuẩn công nghiệp cho animation web hiệu năng cao."
+  },
+  {
+    "id": 5,
+    "question": "Thư viện Lenis trong phát triển web có công dụng chính là gì?",
+    "options": ["Cuộn trang mượt mà (Smooth Scrolling)", "Vẽ biểu đồ 3D", "Nén ảnh trực tuyến", "Dịch thuật đa ngôn ngữ"],
+    "answer": "Cuộn trang mượt mà (Smooth Scrolling)",
+    "explanation": "Lenis là thư viện smooth scroll siêu nhẹ, mượt mà và tương thích tốt với GSAP."
+  }
+]
