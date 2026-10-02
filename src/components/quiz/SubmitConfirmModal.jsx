@@ -18,19 +18,19 @@ export default function SubmitConfirmModal({
       title="Nộp bài thi"
       maxWidth="max-w-sm"
     >
-      <div className="space-y-4 text-sm text-neutral-600">
+      <div className="space-y-4 text-sm text-neutral-600 dark:text-neutral-300">
         <p className="leading-relaxed">
           Xác nhận kết thúc bài làm để xem kết quả và đáp án chi tiết.
         </p>
 
-        <div className="p-3 bg-neutral-50 border border-neutral-200 rounded-lg space-y-1.5 text-xs">
+        <div className="p-3 bg-neutral-50 border border-neutral-200 rounded-lg space-y-1.5 text-xs dark:bg-neutral-800 dark:border-neutral-700">
           <div className="flex justify-between">
-            <span className="text-neutral-500">Tổng số câu:</span>
-            <span className="font-semibold text-neutral-900">{totalQuestions}</span>
+            <span className="text-neutral-500 dark:text-neutral-400">Tổng số câu:</span>
+            <span className="font-semibold text-neutral-900 dark:text-white">{totalQuestions}</span>
           </div>
           <div className="flex justify-between">
-            <span className="text-neutral-500">Đã trả lời:</span>
-            <span className="font-semibold text-neutral-900">{answeredCount}</span>
+            <span className="text-neutral-500 dark:text-neutral-400">Đã trả lời:</span>
+            <span className="font-semibold text-neutral-900 dark:text-white">{answeredCount}</span>
           </div>
           {unansweredCount > 0 && (
             <div className="flex justify-between text-amber-700">

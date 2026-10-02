@@ -13,10 +13,10 @@ export default function ProgressBar({ current, total }) {
 
   return (
     <div className="w-full mb-6">
-      <div className="w-full h-1 bg-neutral-200 rounded-full overflow-hidden">
+      <div className="w-full h-1 bg-neutral-200 rounded-full overflow-hidden dark:bg-neutral-800">
         <div
           ref={barRef}
-          className="h-full bg-neutral-900 rounded-full transition-all duration-200"
+          className="h-full bg-neutral-900 rounded-full transition-all duration-200 dark:bg-white"
           style={{ width: `${percentage}%` }}
         />
       </div>

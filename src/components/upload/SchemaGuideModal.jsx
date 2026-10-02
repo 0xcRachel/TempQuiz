@@ -32,15 +32,15 @@ export default function SchemaGuideModal({ isOpen, onClose }) {
 
   return (
     <Modal isOpen={isOpen} onClose={onClose} title="Cấu trúc file JSON" maxWidth="max-w-xl">
-      <div className="space-y-3 text-sm text-neutral-600">
+      <div className="space-y-3 text-sm text-neutral-600 dark:text-neutral-300">
         <p>Mỗi câu hỏi cần tối thiểu 2 lựa chọn và đúng 1 đáp án đúng.</p>
         <div className="relative">
-          <pre className="p-4 bg-neutral-50 border border-neutral-200 rounded-lg overflow-x-auto text-xs font-mono text-neutral-700 leading-relaxed">
+          <pre className="p-4 bg-neutral-50 border border-neutral-200 rounded-lg overflow-x-auto text-xs font-mono text-neutral-700 leading-relaxed dark:bg-neutral-800 dark:border-neutral-700 dark:text-neutral-200">
             {sample}
           </pre>
           <button
             onClick={handleCopy}
-            className="absolute top-2 right-2 text-xs text-neutral-400 hover:text-neutral-600 flex items-center gap-1 transition"
+            className="absolute top-2 right-2 text-xs text-neutral-400 hover:text-neutral-600 flex items-center gap-1 transition dark:hover:text-neutral-200"
           >
             {copied ? <><Check className="w-3 h-3" /> Đã copy</> : <><Copy className="w-3 h-3" /> Copy</>}
           </button>

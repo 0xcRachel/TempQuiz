@@ -99,9 +99,9 @@ export default function Quiz({
 
           <div
             ref={cardContainerRef}
-            className="bg-white border border-neutral-200 rounded-xl p-6 sm:p-8 shadow-sm mb-6"
+            className="bg-white border border-neutral-200 rounded-xl p-6 sm:p-8 shadow-sm mb-6 dark:bg-neutral-900 dark:border-neutral-800"
           >
-            <h2 className="text-base sm:text-lg font-semibold text-neutral-900 mb-6 leading-relaxed">
+            <h2 className="text-base sm:text-lg font-semibold text-neutral-900 mb-6 leading-relaxed dark:text-white">
               {currentQuestion.question}
             </h2>
 

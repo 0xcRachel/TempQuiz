@@ -17,7 +17,7 @@ export default function QuestionNavigator({
 
   return (
     <div className="sticky bottom-5 z-30 mt-8">
-      <div className="bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-xl p-2.5 sm:p-3 shadow-sm flex items-center justify-between gap-3 max-w-xl mx-auto">
+      <div className="bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-xl p-2.5 sm:p-3 shadow-sm flex items-center justify-between gap-3 max-w-xl mx-auto dark:bg-neutral-900/90 dark:border-neutral-700">
         <Button
           variant="secondary"
           size="sm"
@@ -32,7 +32,7 @@ export default function QuestionNavigator({
           <button
             type="button"
             onClick={() => setShowGrid(!showGrid)}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium text-neutral-600 hover:text-neutral-900 hover:bg-neutral-100 transition dark:text-neutral-300 dark:hover:text-white dark:hover:bg-neutral-800"
           >
             <LayoutGrid className="w-3.5 h-3.5" />
             <span>
@@ -41,19 +41,19 @@ export default function QuestionNavigator({
           </button>
 
           {showGrid && (
-            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-white border border-neutral-200 rounded-xl p-3 shadow-lg z-50">
-              <div className="text-xs font-medium text-neutral-500 mb-2">Danh sách câu hỏi</div>
+            <div className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64 bg-white border border-neutral-200 rounded-xl p-3 shadow-lg z-50 dark:bg-neutral-900 dark:border-neutral-700">
+              <div className="text-xs font-medium text-neutral-500 mb-2 dark:text-neutral-400">Danh sách câu hỏi</div>
               <div className="grid grid-cols-5 gap-1.5 max-h-44 overflow-y-auto">
                 {Array.from({ length: totalQuestions }).map((_, i) => {
                   const isCurrent = i === currentIndex;
                   const qId = sessionQuestions[i]?.id;
                   const isAnswered = qId && userAnswers[qId] !== undefined;
 
-                  let style = 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200';
+                  let style = 'bg-neutral-100 text-neutral-600 hover:bg-neutral-200 dark:bg-neutral-800 dark:text-neutral-300 dark:hover:bg-neutral-700';
                   if (isCurrent) {
-                    style = 'bg-neutral-900 text-white font-semibold';
+                    style = 'bg-neutral-900 text-white font-semibold dark:bg-white dark:text-neutral-900';
                   } else if (isAnswered) {
-                    style = 'bg-neutral-200 text-neutral-900 font-medium';
+                    style = 'bg-neutral-200 text-neutral-900 font-medium dark:bg-neutral-700 dark:text-white';
                   }
 
                   return (

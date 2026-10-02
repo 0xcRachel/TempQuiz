@@ -12,7 +12,7 @@ export default function Button({
   type = 'button',
   ...props
 }) {
-  const base = 'inline-flex items-center justify-center font-medium rounded-lg transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 disabled:opacity-40 disabled:cursor-not-allowed select-none';
+  const base = 'inline-flex items-center justify-center font-medium rounded-lg transition-colors duration-150 focus:outline-none focus-visible:ring-2 focus-visible:ring-neutral-400 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-neutral-950 disabled:opacity-40 disabled:cursor-not-allowed select-none';
 
   const sizes = {
     sm: 'text-xs px-3 py-1.5 gap-1.5',
@@ -21,9 +21,9 @@ export default function Button({
   };
 
   const variants = {
-    primary: 'bg-neutral-900 hover:bg-neutral-800 text-white',
-    secondary: 'bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-200',
-    ghost: 'bg-transparent hover:bg-neutral-100 text-neutral-600',
+    primary: 'bg-neutral-900 hover:bg-neutral-800 text-white dark:bg-white dark:hover:bg-neutral-200 dark:text-neutral-900',
+    secondary: 'bg-white hover:bg-neutral-50 text-neutral-700 border border-neutral-200 dark:bg-neutral-900 dark:hover:bg-neutral-800 dark:text-neutral-200 dark:border-neutral-700',
+    ghost: 'bg-transparent hover:bg-neutral-100 text-neutral-600 dark:hover:bg-neutral-800 dark:text-neutral-300',
     danger: 'bg-red-600 hover:bg-red-700 text-white'
   };
 

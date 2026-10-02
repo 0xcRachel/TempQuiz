@@ -7,14 +7,14 @@ export default function QuizHeader({
   quizTitle
 }) {
   return (
-    <div className="flex items-center justify-between mb-4 text-xs text-neutral-500">
+    <div className="flex items-center justify-between mb-4 text-xs text-neutral-500 dark:text-neutral-400">
       <div className="flex items-center gap-2">
-        <span className="font-semibold text-neutral-900 text-sm">
+        <span className="font-semibold text-neutral-900 text-sm dark:text-white">
           Câu {currentIndex + 1}
         </span>
         <span>/ {totalQuestions}</span>
         {quizTitle && (
-          <span className="hidden sm:inline text-neutral-400 truncate max-w-xs ml-1">
+          <span className="hidden sm:inline text-neutral-400 truncate max-w-xs ml-1 dark:text-neutral-500">
             · {quizTitle}
           </span>
         )}
@@ -22,7 +22,7 @@ export default function QuizHeader({
 
       <div>
         <span>Đã làm: </span>
-        <span className="font-medium text-neutral-800">{answeredCount}/{totalQuestions}</span>
+        <span className="font-medium text-neutral-800 dark:text-neutral-200">{answeredCount}/{totalQuestions}</span>
       </div>
     </div>
   );

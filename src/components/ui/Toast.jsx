@@ -24,10 +24,10 @@ export default function Toast({ toast, onClose }) {
 
   return (
     <div className="fixed bottom-5 right-5 z-50">
-      <div ref={toastRef} className="flex items-center gap-2.5 px-4 py-3 bg-white border border-neutral-200 rounded-lg shadow-md text-sm text-neutral-700 max-w-sm">
+      <div ref={toastRef} className="flex items-center gap-2.5 px-4 py-3 bg-white border border-neutral-200 rounded-lg shadow-md text-sm text-neutral-700 max-w-sm dark:bg-neutral-900 dark:border-neutral-700 dark:text-neutral-200">
         {icons[toast.type] || icons.info}
         <span className="flex-1">{toast.message}</span>
-        <button onClick={onClose} className="p-0.5 text-neutral-400 hover:text-neutral-600">
+        <button onClick={onClose} className="p-0.5 text-neutral-400 hover:text-neutral-600 dark:hover:text-neutral-200">
           <X className="w-3.5 h-3.5" />
         </button>
       </div>

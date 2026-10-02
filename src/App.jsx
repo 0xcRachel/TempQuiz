@@ -7,6 +7,7 @@ import Quiz from './pages/Quiz';
 import Result from './pages/Result';
 import { useQuiz } from './hooks/useQuiz';
 import { useLenis } from './hooks/useLenis';
+import { useDarkMode } from './hooks/useDarkMode';
 import { transitionPages } from './animations/pageTransitions';
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
   const containerRef = useRef(null);
 
   useLenis();
+  const { isDark, toggle: toggleDark } = useDarkMode();
 
   const {
     screen,
@@ -61,13 +63,15 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#fafafa] text-neutral-900 flex flex-col relative">
+    <div className="min-h-screen bg-[#fafafa] text-neutral-900 flex flex-col relative dark:bg-neutral-950 dark:text-neutral-100">
       <Navbar
         screen={screen}
         quizTitle={session?.title}
         onReset={handleResetToHome}
         onRetry={handleRetrySession}
         onOpenSchema={() => setIsSchemaOpen(true)}
+        isDark={isDark}
+        onToggleDark={toggleDark}
       />
 
       <main

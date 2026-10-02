@@ -55,7 +55,7 @@ export default function Result({
       </div>
 
       <div className="sticky bottom-5 z-30">
-        <div className="bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-xl p-2.5 sm:p-3 shadow-sm flex items-center justify-center gap-2 max-w-md mx-auto">
+        <div className="bg-white/90 backdrop-blur-sm border border-neutral-200 rounded-xl p-2.5 sm:p-3 shadow-sm flex items-center justify-center gap-2 max-w-md mx-auto dark:bg-neutral-900/90 dark:border-neutral-700">
           <Button
             variant="primary"
             size="sm"

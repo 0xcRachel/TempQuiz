@@ -34,10 +34,10 @@ export default function Modal({ isOpen, onClose, title, children, maxWidth = 'ma
       aria-modal="true"
       onClick={(e) => { if (e.target === overlayRef.current) onClose?.(); }}
     >
-      <div ref={contentRef} className={`w-full ${maxWidth} bg-white rounded-xl p-6 shadow-lg`}>
+      <div ref={contentRef} className={`w-full ${maxWidth} bg-white rounded-xl p-6 shadow-lg dark:bg-neutral-900 dark:border dark:border-neutral-800`}>
         <div className="flex items-center justify-between mb-4">
-          {title && <h3 className="text-base font-semibold text-neutral-900">{title}</h3>}
-          <button onClick={onClose} className="p-1 rounded text-neutral-400 hover:text-neutral-600 transition" aria-label="Đóng">
+          {title && <h3 className="text-base font-semibold text-neutral-900 dark:text-white">{title}</h3>}
+          <button onClick={onClose} className="p-1 rounded text-neutral-400 hover:text-neutral-600 transition dark:hover:text-neutral-200" aria-label="Đóng">
             <X className="w-5 h-5" />
           </button>
         </div>
