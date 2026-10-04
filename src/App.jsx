@@ -35,6 +35,8 @@ export default function App() {
     prevQuestion,
     submitQuiz,
     retrySession,
+    retryIncorrect,
+    retryCorrect,
     resetToHome
   } = useQuiz();
 
@@ -56,6 +58,14 @@ export default function App() {
 
   const handleRetrySession = () => {
     handleTransitionTo('quiz', () => retrySession());
+  };
+
+  const handleRetryIncorrect = () => {
+    handleTransitionTo('quiz', () => retryIncorrect());
+  };
+
+  const handleRetryCorrect = () => {
+    handleTransitionTo('quiz', () => retryCorrect());
   };
 
   const handleResetToHome = () => {
@@ -108,6 +118,8 @@ export default function App() {
             results={results}
             quizTitle={session?.title}
             onRetry={handleRetrySession}
+            onRetryIncorrect={handleRetryIncorrect}
+            onRetryCorrect={handleRetryCorrect}
             onReset={handleResetToHome}
           />
         )}

@@ -91,6 +91,49 @@ export function useQuiz() {
     setScreen('quiz');
   }, [rawQuiz]);
 
+  // Build a practice session from a subset of question ids (giữ nguyên rawQuiz gốc)
+  const retryWithIds = useCallback((ids, label) => {
+    if (!rawQuiz) return;
+    const idSet = new Set(ids.map((id) => String(id)));
+    const filtered = rawQuiz.questions.filter((q) => idSet.has(String(q.id)));
+    if (filtered.length === 0) {
+      showToast('Không có câu nào trong nhóm này để luyện.', 'info');
+      return;
+    }
+    const practiceSession = createShuffledSession({
+      ...rawQuiz,
+      title: `${rawQuiz.title} · ${label}`,
+      questions: filtered
+    });
+    setSession(practiceSession);
+    setCurrentIndex(0);
+    setUserAnswers({});
+    setResults(null);
+    setScreen('quiz');
+  }, [rawQuiz, showToast]);
+
+  // Làm lại những câu sai (gồm cả câu bỏ trống)
+  const retryIncorrect = useCallback(() => {
+    if (!results) return;
+    const ids = (results.incorrectQuestions || []).map((item) => item.questionId);
+    if (ids.length === 0) {
+      showToast('Bạn không sai câu nào, khỏi cần luyện câu sai nha.', 'success');
+      return;
+    }
+    retryWithIds(ids, `Luyện ${ids.length} câu sai`);
+  }, [results, retryWithIds, showToast]);
+
+  // Làm lại những câu đúng
+  const retryCorrect = useCallback(() => {
+    if (!results) return;
+    const ids = (results.correctQuestions || []).map((item) => item.questionId);
+    if (ids.length === 0) {
+      showToast('Chưa có câu đúng nào để luyện lại.', 'info');
+      return;
+    }
+    retryWithIds(ids, `Luyện ${ids.length} câu đúng`);
+  }, [results, retryWithIds, showToast]);
+
   // Reset back to home screen
   const resetToHome = useCallback(() => {
     setRawQuiz(null);
@@ -135,6 +178,8 @@ export function useQuiz() {
     prevQuestion,
     submitQuiz,
     retrySession,
+    retryIncorrect,
+    retryCorrect,
     resetToHome
   };
 }
