@@ -21,7 +21,7 @@ export default function FilePreviewCard({ quizData, fileName, onStart, onClear }
       </div>
 
       {quizData.description && (
-        <p className="text-xs text-neutral-500 mb-4 leading-relaxed dark:text-neutral-400">{quizData.description}</p>
+        <p className="text-xs text-neutral-500 mb-4 leading-relaxed whitespace-pre-wrap break-words dark:text-neutral-400">{quizData.description}</p>
       )}
 
       <div className="flex items-center justify-between mb-4 py-2 px-3 bg-neutral-50 rounded-lg text-xs text-neutral-500 dark:bg-neutral-800 dark:text-neutral-400">

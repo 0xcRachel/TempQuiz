@@ -42,7 +42,7 @@ export default function AnswerOption({
           {letterKey}
         </span>
 
-        <span className="text-sm leading-relaxed select-text">
+        <span className="text-sm leading-relaxed select-text whitespace-pre-wrap break-words">
           {answer.text}
         </span>
       </div>
